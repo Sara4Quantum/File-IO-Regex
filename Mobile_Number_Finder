@@ -1,0 +1,32 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Mobile_Number_Finder {
+	 
+	public static void main(String[] args) throws IOException {
+		        		       
+		        File input = new File("//home//elcot//Downloads//Resume.txt");
+		        
+		        Pattern patternobj = Pattern.compile("\\d{10}");
+		        
+		         FileReader fre = new FileReader(input);
+		        BufferedReader bf = new BufferedReader(fre);
+		         String line = bf.readLine();
+		        while (line != null) {
+		            Matcher matcherobj = patternobj.matcher(line);
+		            
+		            if (matcherobj.find()) {
+		                System.out.println("Mobile number is "+matcherobj.group());		             		        }
+		              line = bf.readLine();
+		          }		              
+		    }
+		}
+
+//OUTPUT: Mobile number is 9449944994
+//This number is just for sample
