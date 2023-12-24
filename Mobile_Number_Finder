@@ -11,19 +11,19 @@ public class Mobile_Number_Finder {
 	 
 	public static void main(String[] args) throws IOException {
 		        		       
-		        File input = new File("//home//elcot//Downloads//Resume.txt");
+		   File input = new File("//home//elcot//Downloads//Resume.txt");
+		       
+		   Pattern patternobj = Pattern.compile("\\d{10}");
 		        
-		        Pattern patternobj = Pattern.compile("\\d{10}");
-		        
-		         FileReader fre = new FileReader(input);
-		        BufferedReader bf = new BufferedReader(fre);
-		         String line = bf.readLine();
-		        while (line != null) {
-		            Matcher matcherobj = patternobj.matcher(line);
+		    FileReader fre = new FileReader(input);
+		    BufferedReader bf = new BufferedReader(fre);
+		    String line = bf.readLine();
+		    while (line != null) {
+		      Matcher matcherobj = patternobj.matcher(line);
 		            
-		            if (matcherobj.find()) {
-		                System.out.println("Mobile number is "+matcherobj.group());		             		        }
-		              line = bf.readLine();
+		       if (matcherobj.find()) {
+		         System.out.println("Mobile number is "+matcherobj.group());		             		        }
+		          line = bf.readLine();
 		          }		              
 		    }
 		}
